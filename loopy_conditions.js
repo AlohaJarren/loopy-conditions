@@ -133,4 +133,5 @@ function calculate(int1, int2, operator) {
   }
   return result;
 }
+
 console.log(calculate(7,49,"multiply"));
