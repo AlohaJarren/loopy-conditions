@@ -47,31 +47,16 @@ console.log(stringOfNumbers(7));
  * @return { Number }
  */
 
- function sumOfArray (anArray) {
+ var sumOfArray = function(anArray) {
   var sum = 0;
-  var lengthOfArray = anArray.length;
-  var overallSum = [];
-
-  for (i=0; i < lengthOfArray; i++) {
-    if (isNaN(anArray[0])) {
-      anArray.shift();
-    }
-
-    else {
-      overallSum.push (anArray[0]);
-      anArray.shift();
-    }
-  }
-
-  if (anArray.length <= 0) {
-    for(i=0; i < overallSum.length; i++) {
-      sum += overallSum[i];
-    }
-    return sum;
-  }
+  anArray.forEach(function(arr) {
+    if (arr === parseInt(arr,10))
+      sum += arr;
+  })
+  return sum;
  }
 
-console.log(sumOfArray(4, 9, 21, "Some random iss array"));
+console.log(sumOfArray([4, 2, 22, "Some random iss array"]));
 
 
 
@@ -83,6 +68,17 @@ console.log(sumOfArray(4, 9, 21, "Some random iss array"));
  * @return { array }
  */
 
+function getEvens(arr) {
+  var evenArray = [];
+  for (i=0; i<arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      evenArray.push(arr[i])
+    }
+  }
+  return evenArray;
+}
+
+console.log(getEvens([4,7,12,21,43,46]));
 
 /**
  * Create a function called 'getOdds'.
@@ -92,6 +88,17 @@ console.log(sumOfArray(4, 9, 21, "Some random iss array"));
  * @return { array }
  */
 
+function getOdds(arr) {
+  var oddArray = [];
+  for (i=0; i<arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      oddArray.push(arr[i])
+    }
+  }
+  return oddArray;
+}
+
+console.log(getOdds([4,9,12,13,17,21,42,64,69,101]));
 
 /**
  * Create a function called 'calculate'.
@@ -107,3 +114,23 @@ console.log(sumOfArray(4, 9, 21, "Some random iss array"));
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
+
+function calculate(int1, int2, operator) {
+  if (operator == "add") {
+    result = int1 + int2;
+  }
+  else if (operator == "subtract") {
+    result = int1 - int2;
+  }
+  else if (operator == "multiply") {
+    result = int1 * int2;
+  }
+  else if (operator == "divide") {
+    result = int1 / int2;
+  }
+  else{
+    console.log("Invalid operator");
+  }
+  return result;
+}
+console.log(calculate(7,49,"multiply"));
