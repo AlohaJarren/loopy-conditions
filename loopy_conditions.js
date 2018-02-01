@@ -7,6 +7,16 @@
  * @return { Number }
  */
 
+function greaterNumber (a,b) {
+  if (a > b) {
+    return a;
+  }
+  else if (a < b) {
+    return b;
+  }
+}
+
+console.log(greaterNumber (21, 69));
 
 /**
  * Create a function called 'stringOfNumbers'.
@@ -18,6 +28,15 @@
  * @return { String }
  */
 
+function stringOfNumbers(n) {
+  var numberN = "";
+  for (i=0; i < n; i++) {
+    numberN += i;
+  }
+  return numberN;
+}
+
+console.log(stringOfNumbers(7));
 
 /**
  * Create a function called 'sumOfArray'.
@@ -27,6 +46,33 @@
  * @param  { array } arr
  * @return { Number }
  */
+
+ function sumOfArray (anArray) {
+  var sum = 0;
+  var lengthOfArray = anArray.length;
+  var overallSum = [];
+
+  for (i=0; i < lengthOfArray; i++) {
+    if (isNaN(anArray[0])) {
+      anArray.shift();
+    }
+
+    else {
+      overallSum.push (anArray[0]);
+      anArray.shift();
+    }
+  }
+
+  if (anArray.length <= 0) {
+    for(i=0; i < overallSum.length; i++) {
+      sum += overallSum[i];
+    }
+    return sum;
+  }
+ }
+
+console.log(sumOfArray(4, 9, 21, "Some random iss array"));
+
 
 
 /**
