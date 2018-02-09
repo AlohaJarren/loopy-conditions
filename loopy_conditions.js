@@ -18,6 +18,13 @@ function greaterNumber (a,b) {
 
 console.log(greaterNumber (21, 69));
 
+/** 
+zak's:
+function greaterNumber (a, b) {
+  a > b ? a : b;
+}
+*/
+
 /**
  * Create a function called 'stringOfNumbers'.
  * This function will take in 1 parameter
@@ -58,7 +65,15 @@ console.log(stringOfNumbers(7));
 
 console.log(sumOfArray([4, 2, 22, "Some random iss array"]));
 
-
+/** 
+.map method:
+function sumOfArray (arr) {
+  var arraySum;
+  arr.map((currVal) => {arraySum += currValue})
+  return arraySum
+  }
+sumOfArray([4, 2, 22, "Some random iss array"])
+*/
 
 /**
  * Create a function called 'getEvens'.
@@ -79,6 +94,20 @@ function getEvens(arr) {
 }
 
 console.log(getEvens([4,7,12,21,43,46]));
+
+/**
+function getEvens (arr) {
+  var evens = []
+  arr.map(currVal => { 
+  if (currVal % 2 === 0) {
+    evens.push(currVal);
+    }
+  })
+}
+
+getEvens([4,7,12,21,43,46])
+
+*/
 
 /**
  * Create a function called 'getOdds'.
